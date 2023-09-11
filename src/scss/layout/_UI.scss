@@ -1,0 +1,20 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-app {
+    @include m.tablet {
+        @include m.grid(2, 1fr);
+        height: 100vh;
+    }
+
+    .imagen {
+        height: 20rem;
+        background-image: url(../img/1.webp);
+        background-size: cover;
+        background-position: center center;
+        @include m.tablet {
+            height: 100vh;
+        }
+    }
+    
+}

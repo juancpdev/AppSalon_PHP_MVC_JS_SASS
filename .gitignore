@@ -1,0 +1,6 @@
+# Archivos y directorios de node_modules (npm o yarn)
+node_modules/
+package-lock.json
+
+# Directorio vendor de Composer
+/vendor/
