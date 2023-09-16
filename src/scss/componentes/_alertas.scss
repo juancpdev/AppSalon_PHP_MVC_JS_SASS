@@ -7,10 +7,8 @@
     text-align: center;
     color: v.$blanco;
     padding: 1rem;
-    margin: 1.5rem 3rem;
     box-shadow: 2px 2px 5px black;
     font-size: 1.1rem;
-
     &.error {
         background-color: v.$rojo;
     }
