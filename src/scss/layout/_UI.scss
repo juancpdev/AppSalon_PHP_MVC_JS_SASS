@@ -14,6 +14,30 @@
         background-position: center center;
         @include m.tablet {
             height: 100vh;
+            position: fixed; // Hacer que la imagen permanezca en su posición mientras se desplaza.
+            width: 50%; // Cubrir el 50% del ancho de la pantalla.
+            left: 0; // Asegurarse de que esté alineado a la izquierda.
+        }
+    }
+
+    .app2 {
+        @include m.tablet {
+            width: 100%; // Cubrir el 50% restante del ancho de la pantalla.
+            margin-left: 100%; // Mover el contenido a la derecha para que no se superponga con la imagen.
+        }
+    }
+
+    .contenedor-principal-usuario {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 2rem;
+        height: 10rem;
+
+        .usuario-data {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
     }
     

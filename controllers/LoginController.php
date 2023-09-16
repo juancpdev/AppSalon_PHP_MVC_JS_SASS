@@ -52,7 +52,8 @@ class LoginController {
 
     // LOGOUT
     public static function logout() {
-        echo "Desde Logout";
+        $_SESSION = [];
+        header("Location: /");
     }
 
     // OLVIDE CONTRASEÑA

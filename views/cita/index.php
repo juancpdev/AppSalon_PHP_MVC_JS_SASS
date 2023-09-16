@@ -1,7 +1,16 @@
-<h1 class="nombre-pagina">Crear Nueva Cita</h1>
-<p class="descripcion-pagina">Elige tus servicios y coloca tus datos</p>
+<div class="app2">
+    <div class="contenedor-principal-usuario">
+        <div class="usuario-data">
+            <i class="fa-solid fa-user"></i>
+            <p>Hola, <?php echo $nombre ?></p>
+        </div>
+        <div class="contenedor-logout">
+            <a href="/logout" class="btn-rojo-chico">Cerrar Sesión</a>
+        </div>
+    </div>
 
-<div class="app">
+    <h1 class="nombre-pagina">Crear Nueva Cita</h1>
+    <p class="descripcion-pagina">Elige tus servicios y coloca tus datos</p>
     <nav class="tabs">
         <button class="actual" type="button" data-paso="1">Servicios</button>
         <button type="button" data-paso="2">Info Citas</button>
@@ -75,6 +84,8 @@
 
 <?php
     $script = "
+        <script src='//cdn.jsdelivr.net/npm/sweetalert2@10'></script>
         <script src='build/js/app.js'></script>
+        <script src='https://kit.fontawesome.com/d74a8aa5fa.js' crossorigin='anonymous'></script>
     ";
 ?>
