@@ -4,7 +4,7 @@ namespace Controllers;
 
 use MVC\Router;
 
-class citaController {
+class CitaController {
 
     public static function index(Router $router) {
 

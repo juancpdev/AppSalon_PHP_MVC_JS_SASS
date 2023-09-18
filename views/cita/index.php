@@ -1,13 +1,6 @@
 <div class="app2">
-    <div class="contenedor-principal-usuario">
-        <div class="usuario-data">
-            <i class="fa-solid fa-user"></i>
-            <p>Hola, <?php echo $nombre ?></p>
-        </div>
-        <div class="contenedor-logout">
-            <a href="/logout" class="btn-rojo-chico">Cerrar Sesión</a>
-        </div>
-    </div>
+    
+    <?php include_once __DIR__ . "/../templates/barra.php" ?>
 
     <h1 class="nombre-pagina">Crear Nueva Cita</h1>
     <p class="descripcion-pagina">Elige tus servicios y coloca tus datos</p>
