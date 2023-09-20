@@ -13,17 +13,30 @@
         background-size: cover;
         background-position: center center;
         @include m.tablet {
-            height: 100vh;
-            position: fixed; // Hacer que la imagen permanezca en su posición mientras se desplaza.
-            width: 50%; // Cubrir el 50% del ancho de la pantalla.
-            left: 0; // Asegurarse de que esté alineado a la izquierda.
+            height: auto;
         }
     }
 
-    .app2 {
+    .app {
+        width: 100%;
+        margin: 0 auto;
+        padding: 3rem 0;
+        box-sizing: border-box;
+     
         @include m.tablet {
-            width: 100%; // Cubrir el 50% restante del ancho de la pantalla.
-            margin-left: 100%; // Mover el contenido a la derecha para que no se superponga con la imagen.
+            overflow: scroll;
+            overflow-x: hidden;
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        &::-webkit-scrollbar {
+            width: 0.9rem;
+        }
+ 
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(255,255,255, .4);
+            border-radius: 5px;
         }
     }
 

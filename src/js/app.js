@@ -366,6 +366,4 @@ async function reservarCita() {
         })
     }
 
-    
-    
 }
