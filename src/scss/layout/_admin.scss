@@ -1,22 +1,119 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-#citas-admin {
-    .citas {
-        list-style-type: none;
-        padding: 0 2rem;
-        .citas-li {
-            border-bottom: 1px solid v.$gris;
-            padding: 2.5rem 0;
-            &:last-child {
-                border: none;
+.contenedor-botones-admin {
+    margin-bottom: 5rem;
+    padding: 0 3rem;
+    @include m.tablet {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0;
+        width: 100%;
+        height: 5rem;
+        padding: 0;
+        text-transform: uppercase;
+    }
+}
+
+.actual {
+    background-color: v.$blanco !important;
+    color: v.$azul !important;
+}
+
+.citas {
+    list-style-type: none;
+    padding: 0 2rem;
+    li {
+        border-bottom: 1px solid v.$gris;
+        padding: 2.5rem 0;
+        &:last-child {
+            border: none;
+        }
+        p {
+            color: v.$azul;
+            font-weight: v.$bold;
+            span {
+                color: v.$blanco;
+                font-weight: 100;
             }
-            p {
-                color: v.$azul;
-                font-weight: v.$bold;
-                span {
-                    color: v.$blanco;
-                    font-weight: 100;
+        }
+        h3 {
+            margin: 3rem 0;
+            font-size: 3rem;
+        }
+    }
+}
+.id-cita {
+    font-size: 3rem;
+    color: v.$blanco !important;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 5rem;
+        height: .2rem;
+        background-color: v.$azul;
+    }
+}
+
+.servicios  {
+    @extend .citas;
+    li {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+
+
+        align-items: center;
+
+        .info-servicios {
+            display: flex;
+            align-items: center;
+        }
+
+        .edit-servicios {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            .boton-servi {
+                border-radius: 2rem;
+                transition-property: background-color;
+                transition-duration: .3s;
+                &:hover {
+                    background-color: darken( v.$azul, 10% );
+                }
+            }
+
+            .actualizar-servicios {
+                height: 4rem;
+                background-color: v.$azul;
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    i {
+                        color: v.$blanco;
+                    }
+                    
+                }
+            }
+            .eliminar-servicios {
+                form {
+                    button {
+                        height: 4rem;
+                        padding: 1.1rem 3rem;
+                        margin: 0;
+                        border-radius: 2rem;
+                    }
                 }
             }
         }

@@ -1,0 +1,1 @@
+function iniciarApp(){confirmSave()}function confirmSave(){console.log("hola")}document.addEventListener("DOMContentLoaded",(function(){iniciarApp()}));
