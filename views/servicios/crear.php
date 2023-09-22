@@ -11,7 +11,9 @@
     <?php include_once __DIR__ . "/../templates/alertas.php" ?>
     <form class="formulario" method="POST" action="/servicios/crear">
         <?php include_once __DIR__ . "/formulario.php" ?>
-        <button type="button" class="btn-azul-chico" onclick="servicioCreado(event)">Guardar Servicio</button>
+        <div class="btn-contenedor">
+            <button type="button" class="btn-azul-chico" onclick="servicioCreado(event)">Guardar Servicio</button>
+        </div>
     </form>
 </div>
 
