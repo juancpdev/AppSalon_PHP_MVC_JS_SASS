@@ -22,16 +22,15 @@
                 <div class="campo">
                     <label for="nombre">Nombre:</label>
                     <input 
-                        type="name" 
+                        type="text" 
                         id="nombre" 
-                        placeholder="Nombre" 
                         name="nombre" 
                         value="<?php echo $nombre . " " . $apellido ?>"
                         disabled
                         >
                 </div>
                 <div class="campo">
-                    <label for="nombre">Fecha:</label>
+                    <label for="fecha">Fecha:</label>
                     <input 
                         type="date"
                         id="fecha"
@@ -39,10 +38,8 @@
                         >
                 </div>
                 <div class="campo">
-                    <label for="nombre">Hora:</label>
-                    <input 
-                        type="time"
-                        id="hora">
+                    <label for="hora">Hora:</label>
+                    <div id="hora" class="contenedor-horas"></div>
                 </div>
                 <input type="hidden" id="id" value="<?php echo $id ?>">
 

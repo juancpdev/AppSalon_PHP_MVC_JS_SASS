@@ -5,6 +5,7 @@
     use Controllers\APIController;
     use Controllers\citaController;
     use Controllers\LoginController;
+    use Controllers\PerfilController;
     use Controllers\ServicioController;
     use MVC\Router;
 
@@ -31,6 +32,7 @@
 
     // ÁREA PRIVADA
     $router->get("/cita", [CitaController::class, "index"]);
+    $router->get("/perfil", [PerfilController::class, "index"]);
     $router->get("/admin", [AdminController::class, "index"]);
 
     // API de Citas

@@ -31,7 +31,6 @@ class AdminController {
         $consulta .= " ON servicios.id=citasServicios.servicioId ";
         $consulta .= " WHERE citas.fecha = '{$fecha}' ";
 
-
         $citas = AdminCita::SQL($consulta);
 
         $router->render("admin/index", [

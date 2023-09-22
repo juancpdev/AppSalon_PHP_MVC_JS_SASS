@@ -25,8 +25,9 @@
             >
         </div>
     </div>
-
-    <input class="btn-azul" type="submit" value="Iniciar Sesión">
+    <div class="btn-contenedor">
+        <input class="btn-azul" type="submit" value="Iniciar Sesión">
+    </div>
 </form>
 
 <div class="acciones">

@@ -20,3 +20,48 @@
 .ocultar {
     display: none;
 }
+
+.contenedor-horas {
+    @include m.grid(3, 2rem);
+
+    @include m.desktopXL {
+        @include m.grid(6, 2rem);
+    }
+
+    .boton-hora {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: v.$blanco;
+        border: none;
+        border-radius: 20rem;
+        height: 5rem;
+        width: 100%;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.02);
+            cursor: pointer;
+            box-shadow: 0px 0px 5px 4px v.$azul;
+        }
+    }
+
+    .seleccionado {
+        background-color: v.$azul;
+        color: v.$blanco;
+        font-weight: v.$bold;
+        transform: scale(.95);
+        .nombre-servicio {
+            color: v.$blanco;
+        }
+        .precio-servicio {
+            color: v.$blanco;
+        }
+
+        &:hover {
+            transform: scale(.95);
+            box-shadow: none;
+        }
+    }
+}

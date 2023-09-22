@@ -17,8 +17,9 @@
             >
         </div>
     </div>
-
-    <input class="btn-azul" type="submit" value="Confirmar password">
+    <div class="btn-contenedor">
+        <input class="btn-azul" type="submit" value="Confirmar password">
+    </div>
 </form>
 
 <div class="acciones">

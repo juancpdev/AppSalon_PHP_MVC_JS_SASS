@@ -25,7 +25,7 @@ function iniciarApp() {
     idCliente(); // Añade el id del cliente al objeto de citas
     nombreCliente(); // Añade el nombre del cliente al objeto de citas
     seleccionarFecha(); // Añade la fecha al objeto de citas
-    seleccionarHora(); // Añade la hora al objeto de citas
+    mostrarHorarios();
 
     mostrarResumen(); // Muestra el resumen de la cita
 }
@@ -192,21 +192,38 @@ function seleccionarFecha() {
 }
 
 /* SELECCIONAR HORA */
-function seleccionarHora() {
-    const inputHora = document.getElementById('hora');
-    
-    inputHora.addEventListener('input', function(e) {
-        citas.hora = e.target.value;
-        const horaValor = citas.hora.split(":")[0];
-        
-        if((horaValor > 8 && horaValor < 13 ) || (horaValor > 17 && horaValor < 23 )) {
-            citas.hora = e.target.value;
-        } else {
-            e.target.value = "";
-            mostrarAlerta('Horarios de atención (9:00 a 12:00 y 18:00 a 22:00)', 'error', '.formulario');
-        }
-    })
+function mostrarHorarios() {
+    const horarios = ["08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00"];
+    const contenedorHoras = document.getElementById("hora");
+
+    horarios.forEach(hora => {
+        const botonHora = document.createElement("button");
+        botonHora.setAttribute("type", "button");
+        botonHora.textContent = hora;
+        botonHora.classList.add("boton-hora");
+        botonHora.classList.add(`boton-hora-${hora.replace(':', '-')}`);
+        botonHora.onclick = function(e) {
+            seleccionarHoraBoton(e, hora);
+        };
+
+        contenedorHoras.appendChild(botonHora);
+    });
 }
+
+function seleccionarHoraBoton(e, horaSeleccionada) {
+    e.preventDefault(); 
+    citas.hora = horaSeleccionada;
+    
+    // Eliminar clase "seleccionado" de todos los botones
+    const botonesHoras = document.querySelectorAll(".boton-hora");
+    botonesHoras.forEach(boton => boton.classList.remove("seleccionado"));
+    
+    // Añadir clase "seleccionado" al botón que se hizo clic
+    const botonActual = document.querySelector(`.boton-hora-${horaSeleccionada.replace(':', '-')}`);
+    botonActual.classList.add("seleccionado");
+}
+
+
 
 /* MOSTRAR ALERTA */
 function mostrarAlerta(mensaje, tipo, elemento, time = true) {
@@ -350,7 +367,7 @@ async function reservarCita() {
                 icon: 'success',
                 title: 'Cita Creada',
                 text: 'Su cita fue creada correctamente!',
-                button: 'OK'
+                confirmButtonText: 'OK'
             }).then( () => {
                 setTimeout(() => {
                     window.location.reload();
@@ -362,7 +379,7 @@ async function reservarCita() {
             icon: 'error',
             title: 'Error',
             text: 'Hubo un error al crear su cita',
-            button: 'OK'
+            confirmButtonText: 'OK'
         })
     }
 
