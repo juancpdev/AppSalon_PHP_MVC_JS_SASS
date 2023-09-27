@@ -3,7 +3,7 @@
 
     use Controllers\AdminController;
     use Controllers\APIController;
-    use Controllers\citaController;
+    use Controllers\CitaController;
     use Controllers\LoginController;
     use Controllers\PerfilController;
     use Controllers\ServicioController;
