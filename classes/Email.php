@@ -25,8 +25,10 @@ class Email {
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
 
-        $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+        $mail->SMTPSecure = 'tls'; // establecer 'tls'
+
+        $mail->setFrom('AppSalon@appsalon.com');
+        $mail->addAddress($this->email, $this->nombre);
         $mail->Subject = 'Confirma tu cuenta';
 
         // Habilitar HTML
@@ -37,7 +39,7 @@ class Email {
         $contenido = '<html>';
         $contenido .= '<p>Hola <strong>' . $this->nombre . '</strong> has creado tu cuenta en App Salón, solo debes confirmarla presionando el siguiente enlace</p>';
         $contenido .= '<p> Presiona aquí: <a href="' . $_ENV["APP_URL"] . '/confirmar-cuenta?token=' . $this->token . '"> Confirmar cuenta</a></p>';
-        $contenido .= '<p>Si tu no solicitaste este cambio, puedes ignorar el mensaje</p>';
+        $contenido .= '<p>Si tu no solicitaste esto, puedes ignorar el mensaje</p>';
         $contenido .= '</html>';
 
         $mail->Body = $contenido;
@@ -56,8 +58,8 @@ class Email {
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
 
-        $mail->setFrom('cuentas@appsalon.com');
-        $mail->addAddress('cuentas@appsalon.com', 'AppSalon.com');
+        $mail->setFrom('AppSalon@appsalon.com');
+        $mail->addAddress($this->email, $this->nombre);
         $mail->Subject = 'Reestablece tu password';
 
         // Habilitar HTML
