@@ -36,10 +36,10 @@ class Email {
         $mail->CharSet = "UTF-8";
 
         // Definir el contenido
-        $contenido = '<html>';
-        $contenido .= '<p>Hola <strong>' . $this->nombre . '</strong> has creado tu cuenta en App Salón, solo debes confirmarla presionando el siguiente enlace</p>';
-        $contenido .= '<p> Presiona aquí: <a href="' . $_ENV["APP_URL"] . '/confirmar-cuenta?token=' . $this->token . '"> Confirmar cuenta</a></p>';
-        $contenido .= '<p>Si tu no solicitaste esto, puedes ignorar el mensaje</p>';
+        $contenido = '<html>' . "\r\n";
+        $contenido .= '<p>Hola <strong>' . $this->nombre . '</strong> has creado tu cuenta en App Salón, solo debes confirmarla presionando el siguiente enlace</p>' . "\r\n";;
+        $contenido .= '<p> Presiona aquí: <a href="' . $_ENV["APP_URL"] . '/confirmar-cuenta?token=' . $this->token . '"> Confirmar cuenta</a></p>' . "\r\n";;
+        $contenido .= '<p>Si tu no solicitaste esto, puedes ignorar el mensaje</p>' . "\r\n";;
         $contenido .= '</html>';
 
         $mail->Body = $contenido;
