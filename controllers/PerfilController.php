@@ -8,7 +8,7 @@ use MVC\Router;
 class PerfilController {
 
     public static function index(Router $router) {
-        session_start();
+
         isAuth();
 
         $fecha = $_GET["fecha"] ?? date("Y-m-d");
