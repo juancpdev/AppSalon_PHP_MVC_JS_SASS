@@ -11,9 +11,7 @@ class ServicioController {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }        
-        if(!isAdmin()) {
-            header('Location: /');
-        }
+        isAdmin();
 
         $servicios = Servicio::all();
 
@@ -28,9 +26,7 @@ class ServicioController {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }        
-        if(!isAdmin()) {
-            header('Location: /');
-        }
+        isAdmin();
         
         $servicio = new Servicio;
         $alertas = [];
