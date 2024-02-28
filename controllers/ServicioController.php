@@ -14,7 +14,7 @@ class ServicioController {
         if(!isAdmin()) {
             header('Location: /');
         }
-        debuguear($_SESSION);
+
         $servicios = Servicio::all();
 
         $router->render("servicios/index", [
