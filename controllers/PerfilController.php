@@ -27,8 +27,8 @@ class PerfilController {
 
         $consulta = "SELECT usuarios.id as usuarioId, citas.id as citaId, citas.fecha, citas.hora, servicios.nombre as servicio, ";
         $consulta .= " servicios.precio FROM citas LEFT OUTER JOIN usuarios ON citas.usuarioId=usuarios.id ";
-        $consulta .= " LEFT OUTER JOIN citasServicios ON citasServicios.citaId=citas.id LEFT OUTER JOIN ";
-        $consulta .= " servicios ON servicios.id=citasServicios.servicioId ";
+        $consulta .= " LEFT OUTER JOIN citasservicios ON citasservicios.citaId=citas.id LEFT OUTER JOIN ";
+        $consulta .= " servicios ON servicios.id=citasservicios.servicioId ";
         $consulta .= " WHERE usuarioId = '{$idUser}' AND citas.fecha = '{$fecha}' ";
 
         $citas = PerfilCita::SQL($consulta);
