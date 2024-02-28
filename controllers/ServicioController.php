@@ -8,9 +8,10 @@ use MVC\Router;
 class ServicioController {
     // INDEX
     public static function index( Router $router) {
-        if(!isAdmin()) {
-            header('Location: /');
-        }
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }        
+        isAdmin();
 
         $servicios = Servicio::all();
 
@@ -22,9 +23,10 @@ class ServicioController {
 
     // CREAR
     public static function crear( Router $router) {
-        if(!isAdmin()) {
-            header('Location: /');
-        } 
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }        
+        isAdmin();
         
         $servicio = new Servicio;
         $alertas = [];
@@ -50,9 +52,10 @@ class ServicioController {
 
     // ACTUALIZAR
     public static function actualizar( Router $router) {
-        if(!isAdmin()) {
-            header('Location: /');
-        }
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }        
+        isAdmin();
 
         if(!is_numeric($_GET["id"])) return;
         $servicio = Servicio::find($_GET["id"]);
@@ -77,6 +80,7 @@ class ServicioController {
 
     // ELIMINAR
     public static function eliminar( ) {
+        session_start();
         if(!isAdmin()) {
             header('Location: /');
         }
