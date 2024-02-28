@@ -11,8 +11,10 @@ class ServicioController {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }        
-        isAdmin();
-
+        if(!isAdmin()) {
+            header('Location: /');
+        }
+        debuguear($_SESSION);
         $servicios = Servicio::all();
 
         $router->render("servicios/index", [
@@ -26,7 +28,9 @@ class ServicioController {
         if (session_status() == PHP_SESSION_NONE) {
             session_start();
         }        
-        isAdmin();
+        if(!isAdmin()) {
+            header('Location: /');
+        }
         
         $servicio = new Servicio;
         $alertas = [];
